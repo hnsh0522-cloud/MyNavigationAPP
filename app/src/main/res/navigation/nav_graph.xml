@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:id="@+id/nav_graph"
-
     app:startDestination="@id/homeFragment">
-
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.jeiu.mynavigationapp.HomeFragment"
-        android:label="Home"
+        android:label="홈"
         tools:layout="@layout/fragment_home">
-
         <action
             android:id="@+id/action_homeFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
-
     </fragment>
-
 
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.jeiu.mynavigationapp.MenuFragment"
-        android:label="Menu"
+        android:label="도서 목록"
         tools:layout="@layout/fragment_menu">
-
         <action
             android:id="@+id/action_menuFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
-
+        <action
+            android:id="@+id/action_menuFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
     </fragment>
-
 
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.jeiu.mynavigationapp.DetailFragment"
-        android:label="Detail"
+        android:label="도서 상세"
         tools:layout="@layout/fragment_detail">
-
         <argument
-            android:name="subject"
-            app:argType="string"
-            android:defaultValue="선택 없음" />
-
+            android:name="bookId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
     </fragment>
 
-
+    <fragment
+        android:id="@+id/addEditFragment"
+        android:name="com.jeiu.mynavigationapp.AddEditFragment"
+        android:label="추가/수정"
+        tools:layout="@layout/fragment_add_edit">
+        <argument
+            android:name="bookId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
 </navigation>

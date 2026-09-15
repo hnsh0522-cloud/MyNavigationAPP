@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MENU"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+        android:text="도서 목록"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="원하는 항목을 선택하세요."
-        android:textSize="18sp"
-        android:layout_marginTop="20dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/bookListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <Button
-        android:id="@+id/btnAndroid"
-        android:layout_width="200dp"
+        android:id="@+id/btnAddBook"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Android"
-        android:layout_marginTop="30dp" />
-
-    <Button
-        android:id="@+id/btnKotlin"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Kotlin"
-        android:layout_marginTop="10dp" />
+        android:text="+ 새 책 추가하기"
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btnBackHome"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HOME으로 돌아가기"
-        android:layout_marginTop="30dp" />
+        android:text="홈으로"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp" />
 
 </LinearLayout>
